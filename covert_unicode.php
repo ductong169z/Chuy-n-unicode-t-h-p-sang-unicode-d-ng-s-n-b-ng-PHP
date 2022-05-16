@@ -1,5 +1,5 @@
 public static function covert_unicode($normal_string){
-        $unicode_str = mb_convert_encoding($request->coban, 'UTF-16LE', 'UTF-8');
+        $unicode_str = mb_convert_encoding($normal_string, 'UTF-16LE', 'UTF-8');
         $unicode_str = str_replace("\u0065\u0309", "\u1EBB,",$unicode_str);    # ẻ
         $unicode_str = str_replace("\u0065\u0309", "\u1EBB,",$unicode_str);    # ẻ
         $unicode_str = str_replace("\u0065\u0309", "\u1EBB,",$unicode_str);    # ẻ
