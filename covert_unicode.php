@@ -1,4 +1,5 @@
-public static function covert_unicode($unicode_str){
+public static function covert_unicode($normal_string){
+        $unicode_str = mb_convert_encoding($request->coban, 'UTF-16LE', 'UTF-8');
         $unicode_str = str_replace("\u0065\u0309", "\u1EBB,",$unicode_str);    # ẻ
         $unicode_str = str_replace("\u0065\u0309", "\u1EBB,",$unicode_str);    # ẻ
         $unicode_str = str_replace("\u0065\u0309", "\u1EBB,",$unicode_str);    # ẻ
@@ -186,5 +187,7 @@ public static function covert_unicode($unicode_str){
         $unicode_str = str_replace("\u00C2\u0300", "\u1EA6,",$unicode_str);    # Ầ
         $unicode_str = str_replace("\u00C2\u0323", "\u1EAC,",$unicode_str);    # Ậ
         $unicode_str = str_replace("\u00C2\u0303", "\u1EAA,",$unicode_str);    # Ẫ
-        return $unicode_str;
+        $normal_string = mb_convert_encoding($unicode_str, 'UTF-8','UTF-16LE');
+
+        return $normal_string;
     }
